@@ -22,7 +22,6 @@ def storage_information_view(request):
     for user in in_storage_users:
         timezone_entered_time = localtime(value=user.entered_at, timezone=None)
         hours, minutes, seconds = get_duration(timezone_entered_time)
-        details_visit = {}
         details_visit['who_entered'] = user.passcard
         details_visit['entered_at'] = timezone_entered_time
         details_visit['duration'] = format_duration(hours, minutes, seconds)
