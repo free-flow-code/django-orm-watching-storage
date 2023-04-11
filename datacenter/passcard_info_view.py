@@ -3,6 +3,7 @@ from datacenter.models import Visit
 from django.shortcuts import render
 from datacenter.storage_information_view import get_duration
 from datacenter.storage_information_view import format_duration
+from django.shortcuts import get_object_or_404
 
 
 def get_passcard_visits(passcard):
@@ -19,7 +20,7 @@ def get_passcard_visits(passcard):
 
 
 def passcard_info_view(request, passcode):
-    passcard = Passcard.objects.get(passcode=passcode)
+    passcard = get_object_or_404(Passcard, passcode=passcode)
     this_passcard_visits = get_passcard_visits(passcard)
     context = {
         'passcard': passcard,

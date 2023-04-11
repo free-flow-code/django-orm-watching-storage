@@ -2,6 +2,7 @@ from datacenter.models import Passcard
 from datacenter.models import Visit
 from django.shortcuts import render
 from django.utils.timezone import localtime
+from django.shortcuts import get_list_or_404
 import datetime
 
 
@@ -26,7 +27,7 @@ def format_duration(hours, mins, secs):
 
 
 def storage_information_view(request):
-    in_storage_users = Visit.objects.filter(leaved_at=None)
+    in_storage_users = get_list_or_404(Visit, leaved_at=None)
     minutes = 60
     non_closed_visits = []
     for user in in_storage_users:
