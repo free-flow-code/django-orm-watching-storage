@@ -1,8 +1,8 @@
 from datacenter.models import Passcard
 from datacenter.models import Visit
 from django.shortcuts import render
-from datacenter.storage_information_view import get_duration
-from datacenter.storage_information_view import format_duration
+from datacenter.time_processing import get_duration
+from datacenter.time_processing import format_duration
 from django.shortcuts import get_object_or_404
 
 
