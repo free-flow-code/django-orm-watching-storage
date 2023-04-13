@@ -31,11 +31,12 @@ class Visit(models.Model):
         )
 
     def is_long(self, minutes):
+        seconds_in_minute = 60
         if not self.leaved_at:
             time_now = localtime(timezone=None)
             delta = time_now - self.entered_at
         else:
             delta = self.leaved_at - self.entered_at
 
-        is_strange = delta.total_seconds() > minutes * 60
+        is_strange = delta.total_seconds() > minutes * seconds_in_minute
         return is_strange
