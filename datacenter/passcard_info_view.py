@@ -7,10 +7,10 @@ from django.shortcuts import get_object_or_404
 
 
 def get_passcard_visits(passcard):
-    all_visits = Visit.objects.filter(passcard=passcard)
+    all_passcard_visits = Visit.objects.filter(passcard=passcard)
     minutes = 60
     this_passcard_visits = []
-    for visit in all_visits:
+    for visit in all_passcard_visits:
         details_visit = {}
         details_visit['entered_at'] = visit.entered_at
         details_visit['duration'] = format_duration(*get_duration(visit))
