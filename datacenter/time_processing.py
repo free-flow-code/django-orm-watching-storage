@@ -18,7 +18,7 @@ def get_duration(visit):
 
 
 def format_duration(hours, mins, secs):
-    time_string = f'{int(hours)}{int(mins)}{int(secs)}'
-    date_formatter = '%H%M%S'
+    time_string = f'{int(hours)},{int(mins)},{int(secs)}'
+    date_formatter = '%H,%M,%S'
     date_string = datetime.datetime.strptime(time_string, date_formatter)
     return date_string.strftime('%H:%M:%S')
