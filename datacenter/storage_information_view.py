@@ -38,7 +38,7 @@ def storage_information_view(request):
             'who_entered': user.passcard,
             'entered_at': entered_time,
             'duration': format_duration(*get_duration(user)),
-            'is_strange': Visit.is_long(user, minutes)
+            'is_strange': user.is_long(minutes)
         }
         non_closed_visits.append(details_visit)
         print(details_visit)
