@@ -32,11 +32,12 @@ def storage_information_view(request):
     non_closed_visits = []
     for user in in_storage_users:
         entered_time = localtime(value=user.entered_at, timezone=None)
-        details_visit = {}
-        details_visit['who_entered'] = user.passcard
-        details_visit['entered_at'] = entered_time
-        details_visit['duration'] = format_duration(*get_duration(user))
-        details_visit['is_strange'] = Visit.is_long(user, minutes)
+        details_visit = {
+            'who_entered': user.passcard,
+            'entered_at': entered_time,
+            'duration': format_duration(*get_duration(user)),
+            'is_strange': Visit.is_long(user, minutes)
+        }
         non_closed_visits.append(details_visit)
         print(details_visit)
 
