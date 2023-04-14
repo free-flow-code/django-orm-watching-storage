@@ -38,5 +38,4 @@ class Visit(models.Model):
         else:
             delta = self.leaved_at - self.entered_at
 
-        is_strange = delta.total_seconds() > minutes * seconds_in_minute
-        return is_strange
+        return delta.total_seconds() > minutes * seconds_in_minute
