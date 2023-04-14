@@ -20,7 +20,6 @@ def storage_information_view(request):
             'is_strange': user.is_long(minutes)
         }
         non_closed_visits.append(details_visit)
-        print(details_visit)
 
     context = {
         'non_closed_visits': non_closed_visits,
