@@ -14,7 +14,7 @@ def get_passcard_visits(passcard):
         details_visit = {
             'entered_at': visit.entered_at,
             'duration': format_duration(*get_duration(visit)),
-            'is_strange': Visit.is_long(visit, minutes)
+            'is_strange': visit.is_long(minutes)
         }
         this_passcard_visits.append(details_visit)
     return this_passcard_visits
