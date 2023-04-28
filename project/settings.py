@@ -1,13 +1,19 @@
 import os
 
+host = os.environ['DATABASE_HOST']
+port = os.environ['DATABASE_PORT']
+name = os.environ['DATABASE_NAME']
+user = os.environ['DATABASE_USER']
+password = os.environ['DATABASE_PASSWORD']
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': 'checkpoint.devman.org',
-        'PORT': '5434',
-        'NAME': 'checkpoint',
-        'USER': 'guard',
-        'PASSWORD': 'osim5',
+        'HOST': host,
+        'PORT': port,
+        'NAME': name,
+        'USER': user,
+        'PASSWORD': password,
     }
 }
 
