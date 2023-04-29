@@ -22,7 +22,8 @@ DATABASE_NAME='database_name' # Название базы данных
 DATABASE_USER='user_name' # Имя пользователя
 DATABASE_PASSWORD='12345' # Пароль
 DEBUG=False  # Режим отладки Django
-SECRET_KEY="secret_key"
+SECRET_KEY='secret_key'
+ALLOWED_HOSTS=['*']
 ```
 
 Сайт запускается командой:
