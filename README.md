@@ -23,7 +23,7 @@ DATABASE_USER='user_name' # Имя пользователя
 DATABASE_PASSWORD='12345' # Пароль
 DEBUG=False  # Режим отладки Django
 SECRET_KEY='secret_key'
-ALLOWED_HOSTS=['*']
+ALLOWED_HOSTS=['localhost', '127.0.0.1']
 ```
 
 Сайт запускается командой:
